@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="25450f75-706d-43a4-bd69-e831fafdd1bc.RibbonCustomAction4"
+                RegistrationType="List"
+                RegistrationId="{$ListId:Lists/TestList;}"
+                Location="CommandUI.Ribbon"
+                Sequence="10001"
+                Title="Invoke &apos;RibbonCustomAction4&apos; action">
+    <CommandUIExtension>
+      <!-- 
+      Update the UI definitions below with the controls and the command actions
+      that you want to enable for the custom action.
+      -->
+      <CommandUIDefinitions>
+        <CommandUIDefinition Location="Ribbon.ListItem.Actions.Controls._children">
+          <Button Id="Ribbon.ListItem.Actions.RibbonCustomAction4Button"
+                  Alt="Publish Portfolio Hightlights"
+                  Sequence="100"
+                  Command="Invoke_RibbonCustomAction4ButtonRequest"
+                  LabelText="Publish Portfolio Hightlights"
+                  TemplateAlias="o1"
+                  Image32by32="_layouts/15/images/placeholder32x32.png"
+                  Image16by16="_layouts/15/images/placeholder16x16.png" />
+        </CommandUIDefinition>
+      </CommandUIDefinitions>
+      <CommandUIHandlers>
+        <CommandUIHandler Command="Invoke_RibbonCustomAction4ButtonRequest"
+                          CommandAction="~appWebUrl/Pages/Default.aspx?{StandardTokens}&amp;SPListItemId={SelectedItemId}&amp;SPListId={SelectedListId}&amp;SPSource={Source}&amp;SPListURLDir={ListUrlDir}"/>
+      </CommandUIHandlers>
+    </CommandUIExtension >
+  </CustomAction>
+</Elements>
